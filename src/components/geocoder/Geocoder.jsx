@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useCombobox} from 'downshift'
 import {fetchGeocode} from '../../utils'
-import {geocoder, geocoderReset, hide} from './Geocoder.module'
+import {geocoder, geocoderReset, hide} from './Geocoder.module.scss'
 import PropTypes from 'prop-types'
 
 export default function Geocoder({
