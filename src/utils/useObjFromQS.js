@@ -43,34 +43,20 @@ const useObjFromQS = () => {
     }
     // create location filter object from query string
     else if (/(user(latitude)|(longitude))|(radius)/gi.test(k)) {
-      if (!filtersObj.location)
-        filtersObj.location = {}
-        if(k === 'userLatitude' || k === 'userLongitude'){
-          filtersObj.location[k] = parseFloat(v)
-        }else if(k === 'radius'){
-          filtersObj.location[k] = parseInt(v)
-        }
-      
+      if (!filtersObj.location) filtersObj.location = {}
+      if (k === 'userLatitude' || k === 'userLongitude') {
+        filtersObj.location[k] = parseFloat(v)
+      } else if (k === 'radius') {
+        filtersObj.location[k] = parseInt(v)
+      }
     }
     // create date filter object from query string
     else if (/(start)|(end)/i.test(k)) {
-      if (!filtersObj.dateRange)
-        filtersObj.dateRange = {}
+      if (!filtersObj.dateRange) filtersObj.dateRange = {}
       filtersObj.dateRange[k] = v
     }
   }) // end forEach
-/* 
-  if (Object.keys(filtersObj).length) filtersObj['__typeName'] = 'SearchFilters'
 
-  if (filtersObj.locations)
-    filtersObj.locations['__typename'] = 'LocationFilters'
-
-  if (filtersObj.ticketPrice) {
-    filtersObj.ticketPrice.forEach(range => {
-      range['__typename'] = 'PriceFilters'
-    })
-  }
- */
   return filtersObj
 }
 

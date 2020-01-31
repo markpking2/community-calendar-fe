@@ -143,7 +143,7 @@ export default function Navbar() {
               <span
                 className={` is-size-5-tablet no-outline-focus no-pointer-events`}
               >
-                Location
+                My Location
               </span>
               <span
                 className={`${
@@ -160,6 +160,7 @@ export default function Navbar() {
               }`}
               id='location-dropdown-menu '
               role='menu'
+              style={{minWidth: '250px'}}
             >
               <div
                 className='dropdown-content '
@@ -197,7 +198,6 @@ export default function Navbar() {
             </div>
             {/* end dropdown-menu*/}
           </div>
-
           <Link
             to='/'
             role='button'
